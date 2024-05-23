@@ -1,0 +1,240 @@
+
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <style>
+        /* Стили для шапки и навигационного меню */
+        header {
+            background-color:#FF008C ;
+            color:#D80899  ;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #444;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+
+        nav li {
+            margin-right: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        /* Стили для логотипа */
+        .logo {
+            display: block;
+            margin: 20px auto;
+            width: 150px; /* Размер логотипа */
+        }
+        p{
+            font-size:40px;
+        }
+        h2{
+            text-align: center;
+            color: black;
+        }
+        .card {
+  width: 225px;
+  min-height: 350px;
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column; /* Размещаем элементы в колонку */
+  border-radius: 4px;
+  transition: 0.2s;
+  position: relative;
+}
+
+/* При наведении на карточку - меняем цвет тени */
+.card:hover {
+  box-shadow: 4px 8px 16px rgba(255, 102, 51, 0.2);
+}
+
+.card__top {
+  flex: 0 0 220px; /* Задаем высоту 220px, запрещаем расширение и сужение по высоте */
+  position: relative;
+  overflow: hidden; /* Скрываем, что выходит за пределы */
+}
+
+/* Контейнер для картинки */
+.card__image {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.card__image > img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Встраиваем картинку в контейнер card__image */
+  transition: 0.2s;
+}
+
+/* При наведении - увеличиваем картинку */
+.card__image:hover > img {
+  transform: scale(1.1);
+}
+
+/* Размещаем скидку на товар относительно изображения */
+.card__label {
+  padding: 4px 8px;
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  background: #ff6633;
+  border-radius: 4px;
+  font-weight: 400;
+  font-size: 16px;
+  color: #fff;
+}
+
+.card__bottom {
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 auto; /* Занимаем всю оставшуюся высоту карточки */
+  padding: 10px;
+}
+
+.card__prices {
+  display: flex;
+  margin-bottom: 10px;
+  flex: 0 0 50%; /* Размещаем цены равномерно в две колонки */
+}
+
+.card__price::after {
+  content: "";
+  margin-left: 4px;
+  position: relative;
+}
+
+.card__price1--discount {
+  font-weight: 700;
+  font-size: 19px;
+  color: #414141;
+  display: flex;
+  flex-wrap: wrap-reverse;
+}
+
+.card__price1--discount::before {
+  content: "";
+  font-weight: 400;
+  font-size: 13px;
+  color: #bfbfbf;
+}
+
+.card__price1--common {
+  font-weight: 400;
+  font-size: 17px;
+  color: #606060;
+  display: flex;
+  flex-wrap: wrap-reverse;
+  justify-content: flex-end;
+}
+
+.card__price1--common::before {
+  content: "";
+  font-weight: 400;
+  font-size: 13px;
+  color: #bfbfbf;
+}
+
+.card__title {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 150%;
+  color: #414141;
+}
+
+.card__title:hover {
+  color: #ff6633;
+}
+
+.card__add {
+  display: block;
+  width: 100%;
+  font-weight: 400;
+  font-size: 17px;
+  color: #70c05b;
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #70c05b;
+  border-radius: 4px;
+  cursor: pointer; /* Меняем курсор при наведении */
+  transition: 0.2s;
+  margin-top: auto; /* Прижимаем кнопку к низу карточки */
+}
+
+.card__add:hover {
+  border: 1px solid #ff6633;
+  background-color: #ff6633;
+  color: #fff;
+}
+.cards {
+  display: grid;
+  /* Автоматически заполняем на всю ширину grid-контейнера */
+  grid-template-columns: repeat(auto-fill, 225px);
+  width: 100%;
+  max-width: 1000px; /* Ширина grid-контейнера */
+  justify-content: center;
+  justify-items: center; /* Размещаем карточку по центру */
+  column-gap: 30px; /* Отступ между колонками */
+  row-gap: 40px; /* Отступ между рядами */
+  margin: 0 auto;
+}
+    </style>
+</head>
+<body>
+
+    <header>
+        <h2>Тепло души</h2>
+
+        <img src="   https://sun9-24.userapi.com/impg/hn1jhEh20_PZF5XDcZovPBEqEVX-u96WF2094A/shzTz1Hkq7g.jpg?size=932x1080&quality=95&sign=a1df519d0e4b6bfd01369a12aeb4d960&type=album" alt="  Клубок " class="logo">
+        <nav>
+ <ul>
+                <li><a href= "page.html">"главная.html">Главная</a></li>
+                <li><a href="page.html">"Каталог товаров.html">Каталог товаров </a></li>
+                 
+              <li><a href= "page.html">"Стол Заказов.html">Стол заказов</a></li>
+              <li><a href= "page.html">"обо мне.html">Обо мне </a></li>
+ 
+              
+        </nav>
+    </header>
+    </header>
+      <p style="text-align: justify;">Вяза́ние — процесс изготовления полотна или изделий (обычно элементов одежды или предметов интерьера) из одной или нескольких нитей путём изгибания их в петли и переплетания петель друг с другом с помощью несложных инструментов — вручную (вязальные крючок, спицы, игла, вилка, либо просто руками или на пальцах) или на вязальной машине (механическое вязание).</p>
+
+<p style="text-align: justify;">Вязание, как технику, относят к видам плетения, применяют для изготовления предметов одежды (носки, перчатки, шапки) и белья (салфетки, скатерти, занавески), декорирования интерьера.</p>
+
+<p style="text-align: justify;">Благодаря вязанию создаются петли. Они могут быть сделаны из любого вида пряжи, которые идут друг за другом рядком. Связанное изделие состоит из определённого количества рядков из соединенных петель, переплетающихся с последующим и предыдущим рядами.</p>
+     <marquee scrollamount="10">
+<a href="URL статьи №1"><img src=" https://sun9-66.userapi.com/impg/HmLTs448QCX5az-NboJmOlvdfjMHhw82KsL62A/TA7PxUAfsbY.jpg?size=1280x853&quality=95&sign=5f956ceb9cbf1bdd6e09122b4ebf4280&type=album"  /></a>
+<a href="URL статьи №2"><img src=" https://sun9-32.userapi.com/impg/9kP2xggSuK_B6nJZD60Awi56OQHPGa5BXVfOvQ/0Fcv9mLgo6Y.jpg?size=901x901&quality=95&sign=3354c2a0d4fdd1835a47ab8cd3aa0039&type=album " /></a>
+<a href="URL статьи №3"><img src=" https://sun9-46.userapi.com/impg/41vS_qfLITwDZzKMgWQ4kCqB906g_LLXfQptaA/1eZ-UGNPOS4.jpg?size=719x1080&quality=95&sign=47b25d5cec7bbfe0d028a099352a9bf7&type=album " /></a>
+<a href="URL статьи №"4><img  src=" https://sun9-3.userapi.com/impg/Z7L4Hs4BhFvwbmKOgdL-_5dVxxem-3kSFx56og/z96_Vo_l3Lg.jpg?size=948x1080&quality=95&sign=58ea08d131ec9b3100c2473ca57b9b63&type=album  " /></a>
+<a href="URL статьи №5"2><img src="  https://sun9-78.userapi.com/impg/loZbDZNW7YjBzOpQlwJgUia1xdIQxIiLGfESRw/sR20qRLgOeU.jpg?size=994x1000&quality=95&sign=91beaaf913ad46a78dd442a2521847ac&type=album "  /></a></marquee>
+
+ 
+     
+</body>
+</html>
